@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from "./components/SearchBar";
 import YTSearch from 'youtube-api-search';
@@ -9,9 +9,10 @@ YTSearch({key: API_KEY, term: 'surf'}, function (data) {
     console.log(data);
 });
 
-class App extends React.Component {
+class App extends Component {
     constructor(props) {
         super(props);
+        this.state = {videos: []};
     }
 
     render() {
