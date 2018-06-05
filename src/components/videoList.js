@@ -1,11 +1,17 @@
 import React from 'react';
+import VideoListItem from './VideoListItem';
 
 const VideoList = (props) => {
+
+    const videoListItems = props.videos.map((video, index) =>
+        <VideoListItem
+            video={video}
+            key={video + index}
+        />);
+
     return (
         <ul className='col-md-4 list-group'>
-            {props.videos && props.videos.map((video) => {
-                return <img src={video.snippet.thumbnails.default.url}/>
-            })}
+            {videoListItems}
         </ul>
     );
 };
