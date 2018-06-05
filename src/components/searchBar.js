@@ -11,9 +11,9 @@ class SearchBar extends Component {
         return (
             <div>
                 <input
+                    value={this.state.term}
                     onChange={this.onInputChange}
                 />
-                <p>Value entered in SearchBar: {this.state.term}</p>
             </div>
 
         );
@@ -24,7 +24,6 @@ class SearchBar extends Component {
         this.setState(() => ({term: text}));
     };
 }
-
 
 
 export default SearchBar;
