@@ -27,15 +27,27 @@ class App extends Component {
         });
     }
 
+
+    onVideoSelect = (selectedVideo) => {
+        console.log(selectedVideo);
+        this.setState(() => ({
+            selectedVideo: selectedVideo
+        }));
+    };
+
     render() {
         return (
             <div>
                 <SearchBar/>
                 <VideoDetail video={this.state.selectedVideo}/>
-                <VideoList videos={this.state.videos}/>
+                <VideoList
+                    onVideoSelect={this.onVideoSelect}
+                    videos={this.state.videos}
+                />
             </div>
         );
     }
+
 }
 
 ReactDOM.render(<App/>, document.querySelector('.container'));
