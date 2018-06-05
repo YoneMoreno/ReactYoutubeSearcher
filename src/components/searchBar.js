@@ -3,8 +3,14 @@ import React, {Component} from 'react';
 class SearchBar extends Component {
     render() {
         return (
-            <input type="text"/>
+            <input
+                onChange={this.onInputChange}
+            />
         );
+    }
+
+    onInputChange(e) {
+        console.log('change', e.target.value);
     }
 }
 
