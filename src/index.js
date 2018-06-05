@@ -39,10 +39,16 @@ class App extends Component {
         }));
     };
 
+    onSearchTermChange = (term) => {
+        this.videoSearch(term);
+    };
+
+
+
     render() {
         return (
             <div>
-                <SearchBar/>
+                <SearchBar onSearchTermChange={this.onSearchTermChange}/>
                 <VideoDetail video={this.state.selectedVideo}/>
                 <VideoList
                     onVideoSelect={this.onVideoSelect}

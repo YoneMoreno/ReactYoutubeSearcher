@@ -23,6 +23,7 @@ class SearchBar extends Component {
     onInputChange = (e) => {
         const text = e.target.value;
         this.setState(() => ({term: text}));
+        this.props.onSearchTermChange(this.state.term);
     };
 }
 
